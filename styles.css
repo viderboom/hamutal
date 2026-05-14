@@ -4,7 +4,7 @@
 	--deep-red: #a8332a;
 	--warm-gold: #c8903a;
 	--teal: #2a7d6f;
-	--navy: #1e2d3d;
+	--navy: #5d3e71;
 	--soft-pink: #ede4dc;
 	--text-dark: #1e1a17;
 	--text-mid: #6b5e54;
@@ -329,15 +329,16 @@ section {
 h2.section-title {
 	font-family: 'Secular One', sans-serif;
 	font-size: clamp(1.8rem, 5vw, 2.8rem);
-	color: var(--navy);
+	color: var(--teal);
 	margin-bottom: 24px;
 	line-height: 1.2;
 }
 
 /* ── ABOUT ── */
 .about {
-	background: var(--navy);
+	background: var(--section-alt);
 	color: #d8e8f5;
+  color: var(--text-dark);
 	position: relative;
 	overflow: hidden;
 }
@@ -353,13 +354,15 @@ h2.section-title {
 .about .section-tag {
 	color: var(--warm-gold);
 }
-.about h2.section-title {
+/* .about h2.section-title {
 	color: #fff;
-}
+} */
 .about p {
 	font-size: 1.08rem;
 	line-height: 1.85;
-	color: #c5dae8;
+	color: #e5e9ed;
+    color: var(--text-mid);
+
 	max-width: 680px;
 }
 .about p + p {
@@ -419,7 +422,7 @@ h2.section-title {
 
 .offer-grid {
 	display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 	/* grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); */
 	gap: 24px;
 	margin-top: 36px;
