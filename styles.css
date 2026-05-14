@@ -197,7 +197,7 @@ body {
 	font-weight: 300;
 	font-size: 0.95rem;
 	letter-spacing: 0.25em;
-	color: #a8e6d9;
+	color: var(--cream-dark);
 	text-transform: uppercase;
 	margin-bottom: 18px;
 	opacity: 0;
