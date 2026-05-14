@@ -14,11 +14,26 @@
 	<body>
 		<!-- ════════ HERO ════════ -->
 		<section class="hero" id="top">
+			<!-- Parallax Slideshow Background -->
+			<div class="hero-slideshow">
+				<div class="slide active" style="background-image: url('assets/hero1.jpg')"></div>
+				<div class="slide"        style="background-image: url('assets/hero2.jpg')"></div>
+				<div class="slide"        style="background-image: url('assets/hero3.jpg')"></div>
+			</div>
+
+			<!-- Overlay -->
+			<div class="hero-overlay"></div>
+
+			<!-- Curtains -->
+			<!-- <div class="curtain curtain-right"></div>
+			<div class="curtain curtain-left"></div>
+
 			<div class="stage-lights">
 				<div class="light"></div>
 				<div class="light"></div>
 				<div class="light"></div>
-			</div>
+			</div> -->
+
 			<div class="hero-inner">
 				<div class="eyebrow">הצגות ייחודיות לגיל הרך</div>
 				<h1 class="hero-title">התיאטרון<br />של חמוטל</h1>
@@ -41,6 +56,8 @@
 					צרו קשר בוואטסאפ
 				</a>
 			</div>
+
+
 			<div class="scroll-hint"><span>גלו עוד</span></div>
 		</section>
 
@@ -48,7 +65,7 @@
 		<section class="about" id="about">
 			<div class="container reveal">
 				<span class="section-tag">נעים להכיר</span>
-				<h2 class="section-title">שמי חמוטל 🎭</h2>
+				<h2 class="section-title">שמי חמוטל</h2>
 				<p>
 					אהבתי הגדולה היא התיאטרון, ויותר מכך – אני אוהבת להופיע ולספר סיפורים לילדים. במקצועי אני
 					שחקנית, ליצנית רפואית ויוצרת תיאטרון לילדים.
@@ -58,7 +75,18 @@
 					חולים, ובגני תקשורת ועיכוב התפתחותי. במהלך עבודתי המרגשת, התפתחה סדרה המושתת על שפה
 					תיאטרלית רגישה ומותאמת לילדים – כדי שיחוו את הסיפור בהתרגשות פעילה ובהפנמה עמוקה.
 				</p>
-				<div class="stat-row">
+
+				<div class="video-wrap">
+					<iframe
+						src="https://www.youtube.com/embed/5OSljwh7ZRc"
+						title="חמוטל – ליצנית רפואית ויוצרת תיאטרון לילדים"
+						frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen
+					></iframe>
+				</div>
+
+				<!-- <div class="stat-row">
 					<div class="stat">
 						<div class="stat-num">20+</div>
 						<div class="stat-label">שנות ניסיון</div>
@@ -71,7 +99,8 @@
 						<div class="stat-num">45'</div>
 						<div class="stat-label">כל הצגה</div>
 					</div>
-				</div>
+				</div> -->
+
 			</div>
 		</section>
 
@@ -80,12 +109,18 @@
 			<div class="container reveal">
 				<span class="section-tag">מה אני מציעה</span>
 				<h2 class="section-title">הצגות ייחודיות לגיל הרך</h2>
+<p>
+  כיוצרת תיאטרון, אני בוחרת להציע הצגות שהן ייחודיות ומותאמות לילדים בגיל הרך ובמיוחד בגני תקשורת ועיכוב התפתחותי, מש"ה וכד'.
+ההצגות נוצרו במיוחד עבור ילדים והן עוסקות בחוויות חושיות, כדרך להתגבר על קשיים ומגבלות בחיי היומיום. ההצגות חווייתיות, מצחיקות, משמחות ומאד ייחודיות. במהלכן אני משתמשת בחומרים, כלים, צבעים וצלילים שונים שמעצימים את החיבור של הילדים לסיפור
+
+</p>
+
 				<div class="offer-grid">
 					<div class="offer-card" style="--accent: var(--deep-red)">
 						<div class="offer-icon">🌟</div>
-						<h3>מותאמות אישית</h3>
+						<h3> לגיל הרך</h3>
 						<p>
-							הצגות ייחודיות שנוצרו במיוחד עבור ילדים בגיל הרך, גני תקשורת, ועיכוב התפתחותי, מש"ה
+							הצגות ייחודיות שנוצרו במיוחד עבור ילדים בגיל הרך, גני תקשורת, עיכוב התפתחותי, מש"ה
 							וכד'.
 						</p>
 					</div>
@@ -104,7 +139,7 @@
 					</div>
 					<div class="offer-card" style="--accent: var(--navy)">
 						<div class="offer-icon">🏥</div>
-						<h3>רקע טיפולי</h3>
+						<h3>ניסיון ורקע טיפולי</h3>
 						<p>ניסיון עשיר מבתי חולים ומסגרות טיפוליות מבטיח הצגות שמכבדות ומחזקות כל ילד.</p>
 					</div>
 				</div>
@@ -114,21 +149,38 @@
 		<!-- ════════ RACHELA ════════ -->
 		<section class="rachela" id="rachela">
 			<div class="container reveal">
-				<span class="section-tag">הדמות המרכזית</span>
-				<h2 class="section-title">הכירו את רחלה הספרנית 📚</h2>
+				<div class="rachela-hero">
+					<div class="rachela-image-wrap">
+						<img
+							src="assets/rachela.jpg"
+							alt="רחלה הספרנית"
+							class="rachela-photo"
+							onerror="this.parentElement.classList.add('no-image')"
+						/>
+						<div class="rachela-photo-placeholder">
+							<span>📚</span>
+							<span class="placeholder-text">תמונת רחלה</span>
+						</div>
+					</div>
+					<div class="rachela-header">
+						<span class="section-tag">הדמות המרכזית</span>
+						<h2 class="section-title">הכירו את רחלה הספרנית </h2>
+					</div>
+				</div>
+<p>	כל ההצגות מוגשות על-ידי דמות קבועה – <strong>רחלה הספרנית</strong>. </p>
 				<p>
-					כל ההצגות מוגשות על-ידי דמות קבועה – <strong>רחלה הספרנית</strong>. רחלה היא דמות חשובה
-					מאד בסיפור, ובכל מפגש הילדים מחכים לה, כי היא כבר מוכרת ואהובה עליהם מאד.
-				</p>
-				<p>
-					רחלה היא ספרנית חביבה והספרים הם כל עולמה. הספרייה היא בעצם ביתה, ולכל סיפור יש לה דרך
-					מיוחדת לחוש ולהרגיש אותו.
+					רחלה היא ספרנית חביבה והספרים הם כל עולמה. הספרייה היא ביתה, ויש לה דרך
+					מיוחדת לספר כל סיפור  .
 				</p>
 				<p>
 					רחלה היא דמות מיוחדת וגם קצת מפוזרת – היא נוטה לשכוח את המשקפיים שעל ראשה, או מניחה את הספר שרצתה...
 					ועוד אירועים מצחיקים רבים. אבל דבר אחד בטוח –
 				</p>
 				<div class="highlight">רחלה לא קוראת ספר. היא מרגישה אותו. ✨</div>
+				<p class="rachela-loved">
+				רחלה היא דמות חשובה
+					מאד בסיפור, ובכל מפגש הילדים מחכים לה, כי היא כבר מוכרת ואהובה עליהם מאד.
+				</p>
 			</div>
 		</section>
 
@@ -154,14 +206,7 @@
 						<div class="show-emoji">🌍</div>
 						<div class="show-title">רחלה בצד השני של העולם</div>
 					</div>
-					<div class="show-item">
-						<div class="show-emoji">🍳</div>
-						<div class="show-title">רחלה במטבח</div>
-					</div>
-					<div class="show-item">
-						<div class="show-emoji">💃</div>
-						<div class="show-title">רחלה פוגשת את גופה</div>
-					</div>
+				
 				</div>
 			</div>
 		</section>
@@ -272,7 +317,7 @@
 		</footer>
 
 		<script>
-			// Intersection Observer for reveal animations
+			// ── Intersection Observer for reveal animations ──
 			const revealEls = document.querySelectorAll('.reveal')
 			const observer = new IntersectionObserver(
 				entries => {
@@ -286,6 +331,30 @@
 				{ threshold: 0.12 },
 			)
 			revealEls.forEach(el => observer.observe(el))
+
+			// ── Parallax on hero slides ──
+			const slides = document.querySelectorAll('.hero-slideshow .slide')
+			window.addEventListener('scroll', () => {
+				const scrollY = window.scrollY
+				const heroH = document.querySelector('.hero').offsetHeight
+				if (scrollY < heroH) {
+					slides.forEach(slide => {
+						slide.style.backgroundPositionY = `calc(50% + ${scrollY * 0.4}px)`
+					})
+				}
+			}, { passive: true })
+
+			// ── Auto slideshow ──
+			let current = 0
+			const INTERVAL = 4500
+
+			function goToSlide(idx) {
+				slides[current].classList.remove('active')
+				current = idx
+				slides[current].classList.add('active')
+			}
+
+			setInterval(() => goToSlide((current + 1) % slides.length), INTERVAL)
 		</script>
 	</body>
 </html>
