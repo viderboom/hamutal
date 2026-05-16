@@ -308,7 +308,7 @@ h1.hero-title {
 
 /* ── SECTIONS ── */
 section {
-	padding: 80px 24px;
+	padding: 40px 24px;
 }
 
 .container {
@@ -482,7 +482,7 @@ h2.section-title {
 /* Hero layout: image + title side by side */
 .rachela-hero {
 	display: grid;
-	grid-template-columns: 280px 1fr;
+	grid-template-columns: 1fr 280px;
 	gap: 36px;
 	align-items: center;
 	margin-bottom: 32px;
@@ -491,8 +491,8 @@ h2.section-title {
 .rachela-image-wrap {
 	position: relative;
 	width: 280px;
-	height: 340px;
-	border-radius: 24px;
+	height: auto;
+	border-radius: 8px;
 	overflow: hidden;
 	box-shadow: 0 16px 48px rgba(44, 24, 16, 0.22);
 	flex-shrink: 0;
@@ -502,7 +502,7 @@ h2.section-title {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-	object-position: center top;
+	object-position: center top ;
 	display: block;
 }
 
@@ -574,13 +574,13 @@ h2.section-title {
 	color: var(--text-mid) !important;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 680px) {
 	.rachela-hero {
-		grid-template-columns: 1fr;
+		/* grid-template-columns: 1fr; */
 	}
 	.rachela-image-wrap {
-		width: 100%;
-		height: 280px;
+		/* width: 100%; */
+		/* height: 280px; */
 	}
 }
 
@@ -597,11 +597,11 @@ h2.section-title {
 }
 .show-item {
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
 	gap: 18px;
 	background: var(--cream);
 	border-radius: 16px;
-	padding: 20px 28px;
+	padding: 24px 28px;
 	border-right: 4px solid rgba(168, 51, 42, 0.35);
 	transition:
 		background 0.2s,
@@ -614,11 +614,28 @@ h2.section-title {
 .show-emoji {
 	font-size: 1.8rem;
 	flex-shrink: 0;
+	margin-top: 4px;
+}
+.show-content {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
 }
 .show-title {
 	font-family: 'Secular One', sans-serif;
-	font-size: 1rem;
+	font-size: 1.05rem;
 	color: var(--navy);
+}
+.show-author {
+	font-size: 0.85rem;
+	color: var(--warm-gold);
+	font-weight: 500;
+}
+.show-desc {
+	font-size: 0.92rem;
+	line-height: 1.75;
+	color: var(--text-mid);
+	margin-top: 6px;
 }
 
 /* ── LOGISTICS ── */
@@ -628,9 +645,15 @@ h2.section-title {
 
 .logistics-grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	grid-template-columns: repeat( 4, 1fr);
 	gap: 20px;
 	margin-top: 32px;
+}
+@media (max-width: 680px) {
+.logistics-grid {
+	grid-template-columns: repeat( 2, 1fr);
+
+}
 }
 .log-card {
 	text-align: center;
@@ -733,39 +756,75 @@ h2.section-title {
 	font-weight: 700;
 }
 
-/* ── TESTIMONIALS placeholder ── */
+/* ── TESTIMONIALS ── */
 .testimonials {
 	background: var(--section-alt);
 }
-.testimonials p {
-	font-size: 1.05rem;
-	color: var(--text-mid);
-	line-height: 1.8;
-}
 
-.media-placeholder {
-	margin-top: 36px;
-	display: flex;
-	gap: 16px;
-	flex-wrap: wrap;
-}
-.media-box {
-	flex: 1;
-	min-width: 180px;
-	height: 180px;
-	border-radius: 18px;
+.testimonial-card {
 	background: var(--cream);
-	border: 2px dashed #d0bfb0;
+	border-radius: 20px;
+	padding: 36px 40px;
+	margin-top: 32px;
+	border-right: 5px solid var(--deep-red);
+	box-shadow: 0 4px 20px rgba(44, 24, 16, 0.07);
+	position: relative;
+}
+.testimonial-quote {
+	font-size: 3.5rem;
+	color: var(--deep-red);
+	opacity: 0.25;
+	line-height: 1;
+	margin-bottom: 8px;
+	font-family: Georgia, serif;
+}
+.testimonial-text {
+	font-size: 1.08rem;
+	line-height: 1.85;
+	color: var(--text-dark);
+	margin-bottom: 20px;
+}
+.testimonial-author {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	gap: 8px;
-	color: #b0a090;
-	font-size: 0.85rem;
+  gap: 2px;
 }
-.media-box span {
-	font-size: 2rem;
+.testimonial-name {
+	font-family: 'Secular One', sans-serif;
+	font-size: 1rem;
+	color: var(--navy);
+}
+.testimonial-role {
+	font-size: 0.85rem;
+	color: var(--text-mid);
+}
+
+.media-gallery {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 16px;
+	margin-top: 32px;
+}
+.gallery-img {
+	width: 100%;
+	aspect-ratio: 4/3;
+	object-fit: cover;
+	border-radius: 16px;
+	box-shadow: 0 6px 24px rgba(44, 24, 16, 0.12);
+	transition: transform 0.3s, box-shadow 0.3s;
+}
+.gallery-img:hover {
+	transform: scale(1.02);
+	box-shadow: 0 12px 36px rgba(44, 24, 16, 0.2);
+}
+
+@media (max-width: 600px) {
+	.media-gallery {
+		grid-template-columns: 1fr;
+	}
+	.testimonial-card {
+		padding: 24px 22px;
+	}
 }
 
 /* ── CTA ── */
