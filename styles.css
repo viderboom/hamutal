@@ -1147,6 +1147,33 @@ h2.section-title {
 	box-shadow: 0 18px 50px rgba(37, 211, 102, 0.45);
 }
 
+.cta-buttons {
+	display: flex;
+	gap: 16px;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.btn-call-large {
+	display: inline-flex;
+	align-items: center;
+	gap: 12px;
+	background: var(--deep-red);
+	color: #fff;
+	font-family: 'Heebo', sans-serif;
+	font-size: 1.2rem;
+	font-weight: 700;
+	padding: 20px 40px;
+	border-radius: 70px;
+	text-decoration: none;
+	box-shadow: 0 10px 40px rgba(155, 58, 110, 0.35);
+	transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-call-large:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 18px 50px rgba(155, 58, 110, 0.45);
+}
+
 /* ── FOOTER ── */
 footer {
 	background: var(--text-dark);
