@@ -696,6 +696,7 @@ h2.section-title {
 	font-size: 1.25rem;
 	color: var(--deep-red);
 	margin: 10px 0 8px;
+  text-align: center;
 }
 .rachela-text .small-highlight {
 	font-size: 1.1rem;
