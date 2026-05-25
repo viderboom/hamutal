@@ -135,6 +135,29 @@
 						<img src="assets/rachela3.jpg" alt="רחלה הספרנית" class="rachela-photo rachela-photo-mobile" />
 					</div>
 				</div>
+
+				<!-- ווידאו רחלה — lazy load -->
+				<div class="rachela-video-wrap">
+					<div class="video-lazy" id="rachelVideo">
+						<img src="assets/rachela1.jfif" alt="צפי בווידאו של רחלה" class="video-thumb" />
+						<button class="video-play-btn" aria-label="הפעל וידאו">
+							<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+								<circle cx="40" cy="40" r="40" fill="rgba(0,0,0,0.45)"/>
+								<polygon points="32,24 32,56 58,40" fill="white"/>
+							</svg>
+						</button>
+					</div>
+					<video id="rachelVideoEl" src="assets/רחלהטשטוש 1.mp4" controls playsinline style="display:none; width:100%; border-radius:16px;"></video>
+				</div>
+
+				<script>
+					document.getElementById('rachelVideo').addEventListener('click', function() {
+						this.style.display = 'none';
+						const v = document.getElementById('rachelVideoEl');
+						v.style.display = 'block';
+						v.play();
+					});
+				</script>
 			</div>
 		</section>
 
