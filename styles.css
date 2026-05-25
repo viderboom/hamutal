@@ -436,6 +436,96 @@ h2.section-title {
 	border: 0;
 }
 
+/* ווידאו רחלה — lazy load אנכי */
+/* ווידאו רחלה — התאמה למובייל ולדסקטופ */
+.rachela-video-wrap {
+	margin-top: 42px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	padding: 0 16px; /* מרווח ביטחון מהצדדים במובייל */
+}
+#rachelVideoEl {
+	width: 100%;
+	max-width: 280px; /* שומר על הגודל המקורי והצר של הוידאו האנכי */
+	height: auto;
+	border-radius: 16px;
+	box-shadow: 0 8px 32px rgba(60, 30, 80, 0.15);
+	display: block;
+	background-color: #000; /* רקע שחור זמני למקרה של עיכוב קל בטעינת הקובץ */
+}
+
+/* התאמה למסכים קטנים */
+@media (max-width: 480px) {
+	.rachela-video-wrap {
+		margin-top: 28px;
+	}
+	#rachelVideoEl {
+		max-width: 85%; /* יתפוס חלק יפה מהמסך במובייל מבלי לחרוג */
+		box-shadow: 0 6px 20px rgba(60, 30, 80, 0.12);
+	}
+}
+.video-lazy {
+	position: relative;
+	width: 280px;
+	height: 498px;
+	border-radius: 16px;
+	overflow: hidden;
+	cursor: pointer;
+	box-shadow: 0 8px 32px rgba(60, 30, 80, 0.2);
+}
+
+.video-thumb {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center top;
+	display: block;
+	transition: transform 0.3s;
+}
+
+.video-lazy:hover .video-thumb {
+	transform: scale(1.03);
+}
+
+.video-play-btn {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 0;
+}
+
+.video-play-btn svg {
+	width: 72px;
+	height: 72px;
+	filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
+	transition: transform 0.2s;
+}
+
+.video-lazy:hover .video-play-btn svg {
+	transform: scale(1.1);
+}
+
+/* #rachelVideoEl {
+	width: 280px;
+	border-radius: 16px;
+	box-shadow: 0 8px 32px rgba(60, 30, 80, 0.2);
+} */
+
+/* @media (max-width: 620px) {
+	.video-lazy,
+	#rachelVideoEl {
+		width: 220px;
+		height: 391px;
+	}
+} */
+
 .stat-row {
 	display: flex;
 	gap: 40px;
@@ -657,64 +747,182 @@ h2.section-title {
 
 .shows-list {
 	margin-top: 32px;
-	display: flex;
-	flex-direction: column;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
 	gap: 16px;
 }
+
 .show-item {
-	display: flex;
-	align-items: flex-start;
-	gap: 18px;
 	background: var(--cream);
 	border-radius: 16px;
-	padding: 24px 28px;
 	border-right: 4px solid rgba(168, 51, 42, 0.35);
 	transition:
 		background 0.2s,
 		transform 0.2s;
+	overflow: hidden;
 }
+
+
 .show-item:hover {
 	background: var(--cream-dark);
-	transform: translateX(-4px);
+}
+
+/* כפתור הכותרת */
+.show-header {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	gap: 18px;
+	background: none;
+	border: none;
+	padding: 24px 28px;
+	font-family: inherit;
+	font-size: inherit;
+	cursor: pointer;
+	text-align: right;
+	color: inherit;
+}
+@media (max-width: 680px) {
+	.shows-list {
+		margin-top: 32px;
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+	}
 }
 .show-emoji {
 	font-size: 1.8rem;
 	flex-shrink: 0;
-	margin-top: 4px;
 }
+
+/* מכל התמונה העגולה בכותרת ההצגה */
+.show-avatar {
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	overflow: hidden;
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	/* מסגרת כפולה עדינה ברוח הקו העיצובי של האתר */
+	border: 1px solid var(--warm-gold);
+	outline: 2px solid var(--cream);
+	outline-offset: -3px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.show-avatar img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover; /* מונע מהתמונה להימתח או להתעוות */
+	display: block;
+}
+
+/* התאמת ריווח עדין בין התמונה לכותרת */
+.show-header {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	gap: 14px; /* רווח מהודק ועדין יותר שמתאים לתמונות */
+	background: none;
+	border: none;
+	padding: 18px 24px; /* פדינג מעט יותר מעודן */
+	font-family: inherit;
+	font-size: inherit;
+	cursor: pointer;
+	text-align: right;
+	color: inherit;
+}
+
+.show-title {
+	font-family: 'Secular One', sans-serif;
+	font-size: 1.15rem;
+	color: var(--navy);
+	flex-grow: 1;
+}
+
+/* האייקון של החץ - שינוי לחץ אלסטי קפיצי */
+.show-chevron {
+	font-size: 1.5rem;
+	color: var(--warm-gold);
+	transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	line-height: 1;
+}
+
+/* סיבוב החץ בפתיחה */
+.show-item.open .show-chevron {
+	transform: rotate(90deg);
+}
+
+/* גוף האקורדיון - המעבר הפך לקפיצי וקליל יותר */
+.show-body {
+	max-height: 0;
+	overflow: hidden;
+	/* cubic-bezier יוצר את אפקט הפתיחה האלסטית והחלקה */
+	transition:
+		max-height 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+		padding 0.4s ease;
+	padding: 0 28px;
+}
+
+/* הצגת התוכן בפתיחה */
+.show-item.open .show-body {
+	max-height: 300px;
+	padding-bottom: 24px;
+}
+
+/* פייד-אין עדין ואנימציית כניסה קטנה לטקסט עצמו */
+.show-body .show-author,
+.show-body .show-desc {
+	opacity: 0;
+	transform: translateY(6px);
+	transition:
+		opacity 0.3s ease,
+		transform 0.3s ease;
+}
+
+/* כשהאקורדיון נפתח, הטקסט צף פנימה ברכות */
+.show-item.open .show-body .show-author,
+.show-item.open .show-body .show-desc {
+	opacity: 1;
+	transform: translateY(0);
+	/* השהיה קלה כדי שהטקסט יופיע רק כשהגובה מתחיל להיפתח */
+	transition-delay: 0.1s;
+}
+
 .show-content {
 	display: flex;
 	flex-direction: column;
 	gap: 4px;
 }
-.show-title {
-	font-family: 'Secular One', sans-serif;
-	font-size: 1.05rem;
-	color: var(--navy);
-}
+
 .show-author {
 	font-size: 0.85rem;
 	color: var(--warm-gold);
 	font-weight: 500;
+	margin-bottom: 6px;
 }
+
 .show-desc {
-	font-size: 0.92rem;
+	font-size: 0.95rem;
 	line-height: 1.75;
 	color: var(--text-mid);
-	margin-top: 6px;
 }
 
 /* ── LOGISTICS ── */
+
 .logistics {
 	background: var(--cream);
 }
-
 .logistics-grid {
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	gap: 20px;
 	margin-top: 32px;
+	display: grid;
+	gap: 20px;
+	grid-template-columns: repeat(4, 1fr);
 }
+
 @media (max-width: 680px) {
 	.logistics-grid {
 		grid-template-columns: repeat(2, 1fr);

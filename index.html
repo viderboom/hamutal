@@ -132,32 +132,17 @@
 					<!-- תמונה שמאל -->
 					<div class="rachela-images">
 						<img src="assets/rachela1.jfif" alt="רחלה הספרנית" class="rachela-photo" />
-						<img src="assets/rachela3.jpg" alt="רחלה הספרנית" class="rachela-photo rachela-photo-mobile" />
+						<img
+							src="assets/rachela3.jpg"
+							alt="רחלה הספרנית"
+							class="rachela-photo rachela-photo-mobile" />
 					</div>
 				</div>
 
-				<!-- ווידאו רחלה — lazy load -->
+				<!-- ווידאו רחלה — autoplay on scroll -->
 				<div class="rachela-video-wrap">
-					<div class="video-lazy" id="rachelVideo">
-						<img src="assets/rachela1.jfif" alt="צפי בווידאו של רחלה" class="video-thumb" />
-						<button class="video-play-btn" aria-label="הפעל וידאו">
-							<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
-								<circle cx="40" cy="40" r="40" fill="rgba(0,0,0,0.45)"/>
-								<polygon points="32,24 32,56 58,40" fill="white"/>
-							</svg>
-						</button>
-					</div>
-					<video id="rachelVideoEl" src="assets/רחלהטשטוש 1.mp4" controls playsinline style="display:none; width:100%; border-radius:16px;"></video>
+					<video id="rachelVideoEl" src="assets/רחלה בסרט.mp4" playsinline controls></video>
 				</div>
-
-				<script>
-					document.getElementById('rachelVideo').addEventListener('click', function() {
-						this.style.display = 'none';
-						const v = document.getElementById('rachelVideoEl');
-						v.style.display = 'block';
-						v.play();
-					});
-				</script>
 			</div>
 		</section>
 
@@ -166,11 +151,17 @@
 			<div class="container reveal">
 				<span class="section-tag">ההצגות שלי</span>
 				<h2 class="section-title">הצגות לבחירתכם</h2>
-				<div class="shows-list">
+				<div class="shows-list accordion">
 					<div class="show-item">
-						<div class="show-emoji">👹</div>
-						<div class="show-content">
-							<div class="show-title">רחלה מבקרת בארץ יצורי הפרא</div>
+						<button class="show-header" aria-expanded="false">
+							<!-- <span class="show-emoji">👹</span> -->
+              <div class="show-avatar">
+								<img src="assets/jpegארץ יצורי הפרא נבחר לאתר 1.jpg" alt="רחלה מתאהבת בתנין וג'ירפה" />
+							</div>
+							<span class="show-title">רחלה מבקרת בארץ יצורי הפרא</span>
+							<span class="show-chevron">›</span>
+						</button>
+						<div class="show-body">
 							<div class="show-author">בהשראת מוריס סנדק</div>
 							<div class="show-desc">
 								מסע דמיוני, מצחיק ומרגש אל עולם פראי. דרך מוזיקה, תנועה, משחק וקולות, הילדים יצללו
@@ -180,9 +171,15 @@
 						</div>
 					</div>
 					<div class="show-item">
-						<div class="show-emoji">🩹</div>
-						<div class="show-content">
-							<div class="show-title">רחלה מבקרת את משפחת איה אווץ'</div>
+						<button class="show-header" aria-expanded="false">
+							<!-- <span class="show-emoji">🩹</span> -->
+               <div class="show-avatar">
+								<img src="assets/jpgאיה אווץ נבחר לאתר.jpg" alt="רחלה מתאהבת בתנין וג'ירפה" />
+							</div>
+							<span class="show-title">רחלה מבקרת את משפחת איה אווץ'</span>
+							<span class="show-chevron">›</span>
+						</button>
+						<div class="show-body">
 							<div class="show-author">בהשראת רינת פרימו</div>
 							<div class="show-desc">
 								מפגש חושי, חווייתי ומצחיק עם משפחה מיוחדת שעוזרת להתגבר על פצעים. הילדים יוכלו לשתף
@@ -192,9 +189,15 @@
 						</div>
 					</div>
 					<div class="show-item">
-						<div class="show-emoji">🐊</div>
-						<div class="show-content">
-							<div class="show-title">רחלה מתאהבת בתנין וג'ירפה</div>
+						<button class="show-header" aria-expanded="false">
+							<!-- <span class="show-emoji">🐊</span> -->
+							<div class="show-avatar">
+								<img src="assets/תנין וג'ירפה נבחר לאתר.jpg" alt="רחלה מתאהבת בתנין וג'ירפה" />
+							</div>
+							<span class="show-title">רחלה מתאהבת בתנין וג'ירפה</span>
+							<span class="show-chevron">›</span>
+						</button>
+						<div class="show-body">
 							<div class="show-author">בהשראת דניאלה קולוט</div>
 							<div class="show-desc">
 								מפגש חווייתי עם זוג חברים קרובים ושונים מאוד זה מזה. הילדים ילמדו כיצד כל אחד מביא
@@ -204,9 +207,15 @@
 						</div>
 					</div>
 					<div class="show-item">
-						<div class="show-emoji">🌍</div>
-						<div class="show-content">
-							<div class="show-title">רחלה בצד השני של העולם</div>
+						<button class="show-header" aria-expanded="false">
+							<!-- <span class="show-emoji">🌍</span> -->
+               <div class="show-avatar">
+								<img src="assets/רחלה בצד השני של העולם  נבחר לאתר.jpeg" alt="רחלה מתאהבת בתנין וג'ירפה" />
+							</div>
+							<span class="show-title">רחלה בצד השני של העולם</span>
+							<span class="show-chevron">›</span>
+						</button>
+						<div class="show-body">
 							<div class="show-author">בהשראת ליבי גליסון ופריה בלקווד</div>
 							<div class="show-desc">
 								הצצה לעולמם של משחקי הילדים והחברות. נתרגל משחק יחיד לצד משחק משותף, נלמד איך מציעים
@@ -216,6 +225,23 @@
 						</div>
 					</div>
 				</div>
+
+				<script>
+					document.querySelectorAll('.show-header').forEach(function (btn) {
+						btn.addEventListener('click', function () {
+							const item = this.closest('.show-item')
+							const isOpen = item.classList.contains('open')
+							document.querySelectorAll('.show-item.open').forEach(function (el) {
+								el.classList.remove('open')
+								el.querySelector('.show-header').setAttribute('aria-expanded', 'false')
+							})
+							if (!isOpen) {
+								item.classList.add('open')
+								this.setAttribute('aria-expanded', 'true')
+							}
+						})
+					})
+				</script>
 			</div>
 		</section>
 
