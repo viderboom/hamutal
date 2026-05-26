@@ -152,6 +152,7 @@ body {
 		opacity: 0.1;
 	}
 }
+/* 
 .curtain-right {
 	right: 0;
 	clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%);
@@ -159,10 +160,10 @@ body {
 .curtain-left {
 	left: 0;
 	clip-path: polygon(0 0, 100% 0, 70% 100%, 0 100%);
-}
+} */
 
 /* Slide navigation dots */
-.slide-dots {
+/* .slide-dots {
 	position: absolute;
 	bottom: 64px;
 	left: 50%;
@@ -170,7 +171,7 @@ body {
 	display: flex;
 	gap: 10px;
 	z-index: 4;
-}
+} */
 .dot {
 	width: 10px;
 	height: 10px;
@@ -199,7 +200,7 @@ body {
 	max-width: 760px;
 }
 
-.stage-lights {
+/* .stage-lights {
 	position: absolute;
 	top: -60px;
 	left: 50%;
@@ -223,8 +224,8 @@ body {
 .light:nth-child(3) {
 	animation-delay: 2.2s;
 	height: 160px;
-}
-
+} */
+/* 
 @keyframes flicker {
 	0%,
 	100% {
@@ -233,7 +234,7 @@ body {
 	50% {
 		opacity: 0.55;
 	}
-}
+} */
 
 .eyebrow {
 	font-family: 'Heebo', sans-serif;
@@ -275,6 +276,60 @@ h1.hero-title {
 	margin-bottom: 42px;
 	opacity: 0;
 	animation: fadeUp 0.9s 2.35s forwards;
+}
+
+/* ── סל תרבות badge (hero) ── */
+.sal-badge {
+	display: block;
+	background: rgba(255, 255, 255, 0.15);
+	border: 1px solid rgba(255, 255, 255, 0.35);
+	color: #fff;
+	font-size: 0.88rem;
+	font-weight: 700;
+	padding: 6px 18px;
+	border-radius: 30px;
+	margin-bottom: 16px;
+	letter-spacing: 0.03em;
+	backdrop-filter: blur(6px);
+	opacity: 0;
+	animation: fadeUp 0.9s 2.1s forwards;
+
+	font-family: 'Heebo', sans-serif;
+	font-weight: 300;
+	font-size: 0.95rem;
+	letter-spacing: 0.25em;
+}
+
+/* ── סל תרבות banner (logistics) ── */
+.sal-banner {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	background: linear-gradient(135deg, var(--soft-pink), var(--cream));
+	border: 1.5px solid rgba(155, 58, 110, 0.25);
+	border-radius: 16px;
+	padding: 18px 24px;
+	margin-top: 16px;
+	box-shadow: 0 2px 12px rgba(60, 30, 80, 0.08);
+}
+
+.sal-icon {
+	font-size: 2rem;
+	flex-shrink: 0;
+}
+
+.sal-banner strong {
+	display: block;
+	font-family: 'Secular One', sans-serif;
+	font-size: 1rem;
+	color: var(--deep-red);
+	margin-bottom: 2px;
+}
+
+.sal-banner span {
+	font-size: 0.88rem;
+	color: var(--text-mid);
+	line-height: 1.5;
 }
 
 .btn-wa {
@@ -696,7 +751,7 @@ h2.section-title {
 	font-size: 1.25rem;
 	color: var(--deep-red);
 	margin: 10px 0 8px;
-  text-align: center;
+	text-align: center;
 }
 .rachela-text .small-highlight {
 	font-size: 1.1rem;
@@ -762,7 +817,6 @@ h2.section-title {
 		transform 0.2s;
 	overflow: hidden;
 }
-
 
 .show-item:hover {
 	background: var(--cream-dark);
@@ -1127,51 +1181,89 @@ h2.section-title {
 }
 .btn-wa-large {
 	display: inline-flex;
+	flex-direction: column;
 	align-items: center;
-	gap: 14px;
+	justify-content: center;
+	gap: 6px;
 	background: #25d366;
 	color: #fff;
 	font-family: 'Heebo', sans-serif;
-	font-size: 1.2rem;
+	font-size: 0.8rem;
 	font-weight: 700;
-	padding: 20px 48px;
-	border-radius: 70px;
+	width: 90px;
+	height: 90px;
+	border-radius: 50%;
 	text-decoration: none;
-	box-shadow: 0 10px 40px rgba(37, 211, 102, 0.35);
+	box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
 	transition:
 		transform 0.2s,
 		box-shadow 0.2s;
+	position: relative;
+	animation: pulse-green 2.5s ease-in-out infinite;
 }
 .btn-wa-large:hover {
-	transform: translateY(-4px);
-	box-shadow: 0 18px 50px rgba(37, 211, 102, 0.45);
+	transform: scale(1.1);
+	box-shadow: 0 14px 40px rgba(37, 211, 102, 0.55);
+	animation: none;
 }
 
 .cta-buttons {
 	display: flex;
-	gap: 16px;
+	gap: 32px;
 	justify-content: center;
 	flex-wrap: wrap;
+	align-items: center;
 }
 
 .btn-call-large {
 	display: inline-flex;
+	flex-direction: column;
 	align-items: center;
-	gap: 12px;
+	justify-content: center;
+	gap: 6px;
 	background: var(--deep-red);
 	color: #fff;
 	font-family: 'Heebo', sans-serif;
-	font-size: 1.2rem;
+	font-size: 0.8rem;
 	font-weight: 700;
-	padding: 20px 40px;
-	border-radius: 70px;
+	width: 90px;
+	height: 90px;
+	border-radius: 50%;
 	text-decoration: none;
-	box-shadow: 0 10px 40px rgba(155, 58, 110, 0.35);
-	transition: transform 0.2s, box-shadow 0.2s;
+	box-shadow: 0 8px 30px rgba(155, 58, 110, 0.4);
+	transition:
+		transform 0.2s,
+		box-shadow 0.2s;
+	animation: pulse-rose 2.5s ease-in-out 1.25s infinite;
 }
 .btn-call-large:hover {
-	transform: translateY(-4px);
-	box-shadow: 0 18px 50px rgba(155, 58, 110, 0.45);
+	transform: scale(1.1);
+	box-shadow: 0 14px 40px rgba(155, 58, 110, 0.55);
+	animation: none;
+}
+
+@keyframes pulse-green {
+	0%,
+	100% {
+		box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+	}
+	50% {
+		box-shadow:
+			0 8px 30px rgba(37, 211, 102, 0.4),
+			0 0 0 12px rgba(37, 211, 102, 0.15);
+	}
+}
+
+@keyframes pulse-rose {
+	0%,
+	100% {
+		box-shadow: 0 8px 30px rgba(155, 58, 110, 0.4);
+	}
+	50% {
+		box-shadow:
+			0 8px 30px rgba(155, 58, 110, 0.4),
+			0 0 0 12px rgba(155, 58, 110, 0.15);
+	}
 }
 
 /* ── FOOTER ── */
