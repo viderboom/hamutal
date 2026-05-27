@@ -43,7 +43,45 @@ body {
 	padding: 12px;
 	border-radius: 14px;
 }
-/* ── HERO ── */
+/* ── TOP BANNER ── */
+.top-banner {
+	position: sticky;
+	top: 0;
+	z-index: 100;
+	background: var(--deep-red);
+	color: #fff;
+	font-family: 'Heebo', sans-serif;
+	font-size: 0.85rem;
+	font-weight: 500;
+	height: 36px;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	cursor: pointer;
+	transition: filter 0.2s;
+}
+.top-banner:hover {
+	filter: brightness(1.12);
+}
+
+.top-banner-track {
+	display: flex;
+	gap: 80px;
+	white-space: nowrap;
+	animation: marquee 22s linear infinite;
+}
+
+.top-banner-track span {
+	flex-shrink: 0;
+}
+
+@keyframes marquee {
+	0%   { transform: translateX(0); }
+	100% { transform: translateX(-33.333%); }
+}
+
+
 .hero {
 	min-height: 100vh;
 	display: flex;
