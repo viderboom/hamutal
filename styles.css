@@ -290,6 +290,7 @@ h1.hero-title {
 	font-family: 'Secular One', sans-serif;
 	font-size: clamp(2.8rem, 8vw, 5.5rem);
 	line-height: 1.1;
+  letter-spacing: 6px;
 	color: #fff;
 	text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
 	margin-bottom: 12px;
@@ -692,9 +693,9 @@ h2.section-title {
 }
 .offer-card {
 	background: var(--cream);
-	border-radius: 20px;
+	border-radius: 8px;
 	padding: 32px 28px;
-	border: 1px solid rgba(0, 0, 0, 0.06);
+	/* border: 1px solid rgba(0, 0, 0, 0.06); */
 	box-shadow: 0 2px 12px rgba(44, 24, 16, 0.05);
 	transition:
 		border-color 0.25s,
